@@ -1,3 +1,5 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -8,7 +10,7 @@
 --cu:#B87333;--cul:#D4956A;--cup:#E8C4A0;
 --td:#1a1a1a;--tm:#3D3028;--tmut:#7A6555;
 }
-body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td)}
+body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td);overflow-x:hidden}
 
 .page{max-width:860px;margin:0 auto;padding:0}
 
@@ -53,7 +55,6 @@ body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td)}
 .wcard{background:#fff;border:0.5px solid var(--cup);border-radius:3px;overflow:hidden;position:relative}
 .wcard.feat{border:1.5px solid var(--cu)}
 
-/* ── IMAGE AREA ── */
 .wcard-top{
   height:300px;
   display:flex;
@@ -66,7 +67,7 @@ body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td)}
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.12) 0%, transparent 35%, rgba(0,0,0,0.28) 100%);
+  background:linear-gradient(to bottom,rgba(0,0,0,0.12) 0%,transparent 35%,rgba(0,0,0,0.28) 100%);
   z-index:2;
   pointer-events:none;
 }
@@ -91,7 +92,6 @@ body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td)}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--cu)}
 .dot.e{background:transparent;border:1px solid var(--cup)}
 
-/* Tipo do vinho — canto inferior direito */
 .wine-type-lbl{
   position:absolute;
   bottom:5px;right:8px;
@@ -102,11 +102,9 @@ body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td)}
   pointer-events:none;
 }
 
-/* Bandeira do país — canto inferior esquerdo */
 .wine-country-flag{
   position:absolute;
   bottom:5px;left:8px;
-  font-size:11px;
   color:rgba(255,255,255,0.95);
   z-index:5;
   pointer-events:none;
@@ -122,7 +120,6 @@ body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td)}
 }
 .wine-country-flag .flag{font-size:13px;line-height:1}
 
-/* Estrela da casa */
 .wine-star{
   position:absolute;
   top:8px;right:8px;
@@ -136,7 +133,6 @@ body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td)}
   font-weight:700;
 }
 
-/* Imagem da garrafa vetorial */
 .bottle-img{
   height:278px;
   width:auto;
@@ -147,7 +143,6 @@ body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td)}
   flex-shrink:0;
 }
 
-/* Foto real da garrafa */
 .bottle-photo{
   position:absolute;
   inset:0;
@@ -170,7 +165,6 @@ body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td)}
 .leg-dr{display:flex;gap:3px;justify-content:center;margin-bottom:5px}
 .leg-desc{font-size:11px;color:rgba(245,237,224,0.5);line-height:1.4}
 
-/* Quinta Openwine */
 .quinta{
   background:var(--dg);
   padding:52px 40px;
@@ -189,7 +183,6 @@ body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td)}
 .q-addr{font-size:13px;color:var(--cul);margin-top:14px;position:relative;z-index:1}
 .q-line{width:70px;height:1px;background:rgba(184,115,51,0.35);margin:16px auto;position:relative;z-index:1}
 
-/* Uvas disponíveis na Quinta */
 .q-grapes{
   display:flex;
   flex-wrap:wrap;
@@ -219,6 +212,104 @@ body{background:var(--cream);font-family:'Raleway',sans-serif;color:var(--td)}
   font-style:italic;
   position:relative;
   z-index:1;
+}
+
+/* ═══════════ RESPONSIVO — TABLET (≤ 768px) ═══════════ */
+@media (max-width: 768px) {
+  .page { max-width: 100%; }
+
+  .hdr { padding: 40px 24px 32px; }
+  .hdr-border { top:8px;left:8px;right:8px;bottom:8px; }
+  .logo { width: 220px; margin-bottom: 14px; }
+  .hdr-title { font-size: 38px; }
+  .hdr-sub { font-size: 16px; letter-spacing: 1.5px; }
+  .hdr-eyebrow { letter-spacing: 4px; }
+
+  .sec-wrap,
+  .sec-wrap.dark,
+  .sec-wrap.mid { padding: 32px 20px; }
+
+  .sec-hdr { margin-bottom: 26px; }
+  .sec-title { font-size: 28px; }
+
+  .grid2 { grid-template-columns: 1fr; gap: 16px; }
+  .grid3 { grid-template-columns: 1fr 1fr; gap: 14px; }
+
+  .wcard-top { height: 280px; }
+  .bottle-img { height: 256px; }
+
+  .how-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+  .how-card { padding: 20px 16px; }
+
+  .leg-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+  .quinta { padding: 40px 24px; }
+  .q-title { font-size: 28px; }
+  .q-sub { font-size: 16px; margin-bottom: 18px; }
+  .q-box { font-size: 26px; padding: 10px 32px; }
+  .q-grape-desc { font-size: 14px; }
+  .q-grape-desc br { display: none; }
+}
+
+/* ═══════════ RESPONSIVO — MOBILE (≤ 480px) ═══════════ */
+@media (max-width: 480px) {
+  .hdr { padding: 28px 14px 24px; }
+  .hdr-border { top:6px;left:6px;right:6px;bottom:6px; }
+  .logo { width: 160px; margin-bottom: 12px; }
+  .hdr-title { font-size: 30px; }
+  .hdr-sub { font-size: 14px; letter-spacing: 1px; }
+  .hdr-eyebrow { font-size: 9px; letter-spacing: 3px; }
+  .hdr-line { width: 70px; margin-top: 14px; }
+
+  .sec-wrap,
+  .sec-wrap.dark,
+  .sec-wrap.mid { padding: 26px 14px; }
+
+  .sec-hdr { margin-bottom: 20px; }
+  .sec-title { font-size: 24px; }
+  .sec-eyebrow { letter-spacing: 3px; }
+
+  .grid2 { grid-template-columns: 1fr; gap: 14px; }
+  .grid3 { grid-template-columns: 1fr; gap: 12px; }
+
+  .wcard-top { height: 240px; }
+  .bottle-img { height: 218px; }
+
+  .wcard-body { padding: 13px 12px; }
+  .wname { font-size: 15px; }
+  .wvar { font-size: 12px; }
+  .wdesc { font-size: 11px; line-height: 1.6; margin-bottom: 8px; }
+  .wpair { padding: 7px 9px; }
+  .wpair-txt { font-size: 11px; }
+  .wfoot { gap: 6px; }
+  .wprice { font-size: 18px; }
+
+  .how-grid { grid-template-columns: 1fr; gap: 10px; margin-bottom: 18px; }
+  .how-card { padding: 18px 14px; text-align: left; display: flex; gap: 14px; align-items: flex-start; }
+  .how-num { margin: 0; flex-shrink: 0; width: 36px; height: 36px; font-size: 15px; }
+  .how-ttl { font-size: 14px; margin-bottom: 5px; }
+  .how-txt { font-size: 11.5px; }
+
+  .leg-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .leg-desc { font-size: 10px; }
+
+  .quinta { padding: 30px 14px; }
+  .q-title { font-size: 23px; }
+  .q-sub { font-size: 14px; margin-bottom: 14px; }
+  .q-box { font-size: 22px; padding: 9px 20px; }
+  .q-box span { font-size: 11px; }
+  .q-info { font-size: 11px; letter-spacing: 1px; }
+  .q-addr { font-size: 11.5px; }
+  .q-grape-desc { font-size: 13px; line-height: 1.65; }
+  .q-grape-desc br { display: none; }
+  .q-grape-tag { font-size: 9px; padding: 4px 10px; }
+  .q-grapes { gap: 6px; margin: 14px 0; }
+  .q-line { margin: 12px auto; }
+  .q-lbl { letter-spacing: 3px; }
 }
 </style>
 
